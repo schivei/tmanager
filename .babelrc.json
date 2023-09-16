@@ -1,0 +1,7 @@
+{
+    "test": "/\\.(js|mjs|jsx|ts|tsx)$/",
+    "exclude": "/node_modules/",
+    "targets": {
+        "esmodules": true
+    }
+}

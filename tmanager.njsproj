@@ -1,0 +1,72 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>tmanager</Name>
+    <RootNamespace>tmanager</RootNamespace>
+    <ScriptArguments>-i '[{\"description\":\"Criar Login\",\"responsable\":\"bruno\",\"status\":\"done\"}, {\"description\":\"Criar Menu\",\"responsable\":\"bruno\",\"status\":\"doing\"}, {\"description\":\"Criar tela de perfil\",\"responsable\":\"bruno\",\"status\":\"todo\"}]'</ScriptArguments>
+    <SaveNodeJsSettingsInProjectFile>True</SaveNodeJsSettingsInProjectFile>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>37632cc7-8f8a-4778-9337-3c63421c0654</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>app.js</StartupFile>
+    <StartWebBrowser>False</StartWebBrowser>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <StartWebBrowser>False</StartWebBrowser>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include=".babelrc.json" />
+    <Content Include=".firebaserc" />
+    <Content Include=".github\workflows\npm-publish.yml" />
+    <Content Include=".gitignore" />
+    <Content Include=".vscode\launch.json" />
+    <Content Include="app.js" />
+    <Content Include="commands\clear.js" />
+    <Content Include="commands\daemon.js" />
+    <Content Include="commands\file.js" />
+    <Content Include="commands\index.js" />
+    <Content Include="commands\insert.js" />
+    <Content Include="commands\select.js" />
+    <Content Include="firebase.json" />
+    <Content Include="firestore.indexes.json" />
+    <Content Include="jest.config.mjs" />
+    <Content Include="package-lock.json" />
+    <Content Include="routes\get-tasks.js" />
+    <Content Include="routes\index.js" />
+    <Content Include="routes\insert-tasks.js" />
+    <Content Include="__tests__\cli.test.js" />
+    <Content Include="__tests__\tasks.json" />
+    <Content Include="tasks.js" />
+    <Content Include="firestore.rules" />
+    <Content Include="package.json" />
+    <Content Include="README.md" />
+    <Content Include="__tests__\web.test.js" />
+    <Content Include="firebase-admin.json" />
+    <Content Include="tmanager" />
+    <Content Include="tmanager.bat" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include=".github\" />
+    <Folder Include=".github\workflows\" />
+    <Folder Include=".vscode\" />
+    <Folder Include="commands\" />
+    <Folder Include="__tests__\" />
+    <Folder Include="routes\" />
+  </ItemGroup>
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
+</Project>

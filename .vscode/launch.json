@@ -1,0 +1,30 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "localhost (Chrome)",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "name": "Debug Dev Env",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "program": "${workspaceFolder}/app.js",
+            "args": "-i '[{\\\"description\\\":\\\"Criar Login\\\",\\\"responsable\\\":\\\"bruno\\\",\\\"status\\\":\\\"done\\\"}, {\\\"description\\\":\\\"Criar Menu\\\",\\\"responsable\\\":\\\"bruno\\\",\\\"status\\\":\\\"doing\\\"}, {\\\"description\\\":\\\"Criar tela de perfil\\\",\\\"responsable\\\":\\\"bruno\\\",\\\"status\\\":\\\"todo\\\"}]'",
+            "stopOnEntry": true
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Launch Node and Browser",
+            "configurations": [
+                "Debug Dev Env",
+                "localhost (Chrome)"
+            ]
+        }
+    ]
+}
