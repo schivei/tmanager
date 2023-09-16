@@ -18,4 +18,5 @@ jobs:
       - run: npm i --no-audit
       - run: npm test
         env:
+            FIREBASE_PRIVATE_KEY_ID: ${{ secrets.PRIVATE_KEY_ID }}
             FIREBASE_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}

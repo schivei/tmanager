@@ -1,8 +1,6 @@
 {
   "type": "service_account",
   "project_id": "tmanager-18725",
-  "private_key_id": "124652a2ac3578d4f48e899ab3ef4853f56a1d58",
-  "private_key": "",
   "client_email": "firebase-adminsdk-hcadd@tmanager-18725.iam.gserviceaccount.com",
   "client_id": "101564481016588129520",
   "auth_uri": "https://accounts.google.com/o/oauth2/auth",
