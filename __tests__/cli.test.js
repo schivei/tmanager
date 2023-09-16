@@ -23,7 +23,7 @@ const tasks = [
     }
 ];
 
-afterAll(() => {
+afterAll(async () => {
     await clearTasks();
 });
 

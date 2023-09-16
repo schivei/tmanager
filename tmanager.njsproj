@@ -45,7 +45,6 @@
     <Content Include="firebase.json" />
     <Content Include="firestore.indexes.json" />
     <Content Include="jest.config.mjs" />
-    <Content Include="package-lock.json" />
     <Content Include="routes\get-tasks.js" />
     <Content Include="routes\index.js" />
     <Content Include="routes\insert-tasks.js" />

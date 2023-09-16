@@ -29,7 +29,7 @@ beforeAll(async () => {
     await new Promise(resolve => setTimeout(resolve, 1000));
 });
 
-afterAll(() => {
+afterAll(async () => {
     app.server.close();
     await clearTasks();
 });
