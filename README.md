@@ -58,6 +58,11 @@ or
 tmanager --select
 ```
 
+To filter data, use `--filter` option with `-s` or `--select` option
+```bash
+tmanager -s --filter status=done
+```
+
 ### Clear
 ```bash
 tmanager -c
