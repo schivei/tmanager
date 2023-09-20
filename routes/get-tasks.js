@@ -2,9 +2,22 @@
 import createError from 'http-errors';
 
 export default function (app) {
-    app.get('/get-tasks', async function (_, res, next) {
+    app.get('/get-tasks', async function (req, res, next) {
         try {
-            const data = await selectData();
+            // get field and value from query string
+            const field = req.query.field;
+            const value = req.query.value;
+
+            let selectionArgs = null;
+
+            if (field && value) {
+                selectionArgs = {
+                    field,
+                    value
+                };
+            }
+
+            const data = await selectData(selectionArgs);
             res.status(200).json(data);
         } catch (error) {
             console.error(error);

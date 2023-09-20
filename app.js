@@ -9,12 +9,13 @@ const options = commander
     .option('-d, --daemon', 'Run Web Daemon')
     .option('-i, --insert <value>', 'Insert data to database')
     .option('-s, --select', 'Select data from database')
+    .option('--filter <value>', 'Selection data filter')
     .option('-f, --file <path>', 'File to be processed')
     .option('-c, --clear', 'Clear database')
     .parse(process.argv)
     .opts();
 
-const { daemon, insert, select, file, clear } = options;
+const { daemon, insert, select, filter, file, clear } = options;
 
 if (daemon) {
     console.log('Run Web Daemon');
@@ -26,8 +27,16 @@ if (daemon) {
     const size = await insertData(data);
     console.log(`Inserted ${size} rows`);
 } else if (select) {
+    let selectionArgs;
+    if (filter && filter.indexOf('=') > 0) {
+        selectionArgs = {
+            field: filter.split('=')[0],
+            value: filter.split('=')[1]
+        };
+    }
+
     console.log('Select data from database');
-    const data = await selectData();
+    const data = await selectData(selectionArgs);
     console.log(`Selected ${data.length} rows`);
     console.table(data);
 } else if (file) {

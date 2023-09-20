@@ -1,7 +1,20 @@
 ﻿import { tasks } from "../tasks.js";
 
-export default async function () {
-    const snapshot = await tasks.get();
+export default async function (filter) {
+    let snapshot;
+    
+    if (!filter) {
+        snapshot = await tasks.get();
+    } else {
+        const tryNumber = parseInt(filter.value);
+        let value = filter.value;
+
+        if (!isNaN(tryNumber)) {
+            value = tryNumber;
+        }
+
+        snapshot = await tasks.where(filter.field, '==', value).get();
+    }
 
     const data = [];
 
